@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/dialog_borders"
+    android:padding="17dp">
+<ScrollView
+    android:orientation="vertical"
+    android:scrollbars="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:id="@+id/dialog_match_scroll_field"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:textSize="@dimen/text_size_n"
+        android:layout_margin="@dimen/margin_top_n"
+        android:background="#EED3D7"
+        android:textColor="#B94A48"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_match_stadium_date"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_match_alert_message"/>
+    <TextView
+        android:layout_marginTop="@dimen/margin_top_sm"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_match_alert_message"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_match_assistance_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="@dimen/margin_xs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_match_stadium_date"
+        />
+    <TextView
+        android:id="@+id/dialog_match_assistance_label"
+        android:textSize="@dimen/text_size_sm"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_match_stadium_date"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_match_score_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_xs"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_match_assistance_label"
+            app:layout_constraintBottom_toTopOf="@+id/dialog_match_scorers"
+            android:id="@+id/dialog_match_score_layout"
+            android:layout_marginBottom="@dimen/margin_sm"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginLeft="@dimen/margin_xxl"
+                android:paddingLeft="@dimen/margin_xxl"
+                android:id="@+id/dialog_match_shield_local"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_l"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/dialog_match_result"
+                app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:text="0 - 0"
+        android:textSize="@dimen/text_size_xl"
+        android:textStyle="bold"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/dialog_match_shield_visit"
+        app:layout_constraintLeft_toRightOf="@+id/dialog_match_shield_local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_match_result"/>
+
+        <ImageView
+            android:paddingRight="@dimen/margin_xxl"
+            android:layout_marginRight="@dimen/margin_xxl"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            android:id="@+id/dialog_match_shield_visit"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_l"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/dialog_match_result"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TableLayout
+            app:layout_constraintTop_toBottomOf="@+id/dialog_match_score_layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/dialog_match_scorers"
+            android:id="@+id/dialog_match_teams_table_label"
+            android:layout_width="match_parent"
+            android:stretchColumns="*"
+            android:layout_height="wrap_content">
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="0dp">
+                <TextView
+                    android:id="@+id/dialog_match_local_team_name_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_top_xs"
+                    android:text="local"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_size_sm"
+                    />
+                <TextView
+                    android:text="visit"
+                    android:layout_marginTop="@dimen/margin_top_xs"
+                    android:textAlignment="center"
+                    android:id="@+id/dialog_match_visit_team_name_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_sm"
+                    />
+            </TableRow></TableLayout>
+    <TableLayout
+        android:paddingLeft="@dimen/padding_n"
+        android:paddingRight="@dimen/padding_n"
+        android:stretchColumns="*"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_match_teams_table_label"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_match_lineup_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_match_scorers"/>
+<TextView
+    android:id="@+id/dialog_match_lineup_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/initial_formations"
+    android:textSize="@dimen/text_size_xl"
+    android:textStyle="bold"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/dialog_match_scorers"
+    app:layout_constraintBottom_toTopOf="@+id/dialog_match_field_pack"/>
+<androidx.constraintlayout.widget.ConstraintLayout
+    app:layout_constraintVertical_chainStyle="packed"
+    app:layout_constraintTop_toBottomOf="@+id/dialog_match_lineup_title"
+    app:layout_constraintBottom_toTopOf="@+id/dialog_match_resume_title"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_xs"
+    android:minHeight="@dimen/height_200"
+    android:maxHeight="@dimen/height_300"
+    android:id="@+id/dialog_match_field_pack">
+    <TableLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/dialog_match_formation_local_guideline"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_match_formation_local"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dialog_match_formation_local_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dialog_match_field"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/field"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/dialog_match_formation_local_guideline"
+            app:layout_constraintRight_toLeftOf="@+id/dialog_match_formation_visit_guideline"
+            app:layout_constraintTop_toTopOf="parent" >
+            <RelativeLayout
+                android:id="@+id/zone_22"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.846"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.026">
+
+                <RelativeLayout
+                    android:id="@+id/player_22"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_22_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_atac" />
+
+                    <TextView
+                        android:id="@+id/player_22_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_22_image"
+                        android:layout_alignLeft="@id/player_22_image"
+                        android:layout_alignRight="@id/player_22_image"
+                        android:layout_alignTop="@id/player_22_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="11" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_21"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.111">
+
+                <RelativeLayout
+                    android:id="@+id/player_21"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_21_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_atac" />
+
+                    <TextView
+                        android:id="@+id/player_21_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_21_image"
+                        android:layout_alignLeft="@id/player_21_image"
+                        android:layout_alignRight="@id/player_21_image"
+                        android:layout_alignTop="@id/player_21_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="10" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_20"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_20"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_20_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_atac" />
+
+                    <TextView
+                        android:id="@+id/player_20_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_20_image"
+                        android:layout_alignLeft="@id/player_20_image"
+                        android:layout_alignRight="@id/player_20_image"
+                        android:layout_alignTop="@id/player_20_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="9" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_19"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_19"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_19_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_med" />
+
+                    <TextView
+                        android:id="@+id/player_19_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_19_image"
+                        android:layout_alignLeft="@id/player_19_image"
+                        android:layout_alignRight="@id/player_19_image"
+                        android:layout_alignTop="@id/player_19_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="8" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_18"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_18"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_18_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_med" />
+
+                    <TextView
+                        android:id="@+id/player_18_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_18_image"
+                        android:layout_alignLeft="@id/player_18_image"
+                        android:layout_alignRight="@id/player_18_image"
+                        android:layout_alignTop="@id/player_18_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="7" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_17"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_17"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_17_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_med" />
+
+                    <TextView
+                        android:id="@+id/player_17_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_17_image"
+                        android:layout_alignLeft="@id/player_17_image"
+                        android:layout_alignRight="@id/player_17_image"
+                        android:layout_alignTop="@id/player_17_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="6" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_16"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_16"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_16_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_def" />
+
+                    <TextView
+                        android:id="@+id/player_16_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_16_image"
+                        android:layout_alignLeft="@id/player_16_image"
+                        android:layout_alignRight="@id/player_16_image"
+                        android:layout_alignTop="@id/player_16_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="5" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_15"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_15"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_15_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_def" />
+
+                    <TextView
+                        android:id="@+id/player_15_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_15_image"
+                        android:layout_alignLeft="@id/player_15_image"
+                        android:layout_alignRight="@id/player_15_image"
+                        android:layout_alignTop="@id/player_15_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="4" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_14"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_14"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_14_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_def" />
+
+                    <TextView
+                        android:id="@+id/player_14_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_14_image"
+                        android:layout_alignLeft="@id/player_14_image"
+                        android:layout_alignRight="@id/player_14_image"
+                        android:layout_alignTop="@id/player_14_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="3" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_13"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_13"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_13_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_def" />
+
+                    <TextView
+                        android:id="@+id/player_13_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_13_image"
+                        android:layout_alignLeft="@id/player_13_image"
+                        android:layout_alignRight="@id/player_13_image"
+                        android:layout_alignTop="@id/player_13_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="2" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_12"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_12"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_12_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_arq" />
+
+                    <TextView
+                        android:id="@+id/player_12_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_12_image"
+                        android:layout_alignLeft="@id/player_12_image"
+                        android:layout_alignRight="@id/player_12_image"
+                        android:layout_alignTop="@id/player_12_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="1" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/zone_11"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.846"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.026">
+
+                <RelativeLayout
+                    android:id="@+id/player_11"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_11_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_atac" />
+
+                    <TextView
+                        android:id="@+id/player_11_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_11_image"
+                        android:layout_alignLeft="@id/player_11_image"
+                        android:layout_alignRight="@id/player_11_image"
+                        android:layout_alignTop="@id/player_11_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="11" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_10"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.111">
+
+                <RelativeLayout
+                    android:id="@+id/player_10"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_10_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_atac" />
+
+                    <TextView
+                        android:id="@+id/player_10_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_10_image"
+                        android:layout_alignLeft="@id/player_10_image"
+                        android:layout_alignRight="@id/player_10_image"
+                        android:layout_alignTop="@id/player_10_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="10" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_9"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_9"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_9_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_atac" />
+
+                    <TextView
+                        android:id="@+id/player_9_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_9_image"
+                        android:layout_alignLeft="@id/player_9_image"
+                        android:layout_alignRight="@id/player_9_image"
+                        android:layout_alignTop="@id/player_9_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="9" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_8"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_8"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_8_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_med" />
+
+                    <TextView
+                        android:id="@+id/player_8_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_8_image"
+                        android:layout_alignLeft="@id/player_8_image"
+                        android:layout_alignRight="@id/player_8_image"
+                        android:layout_alignTop="@id/player_8_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="8" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_7"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_7"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_7_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_med" />
+
+                    <TextView
+                        android:id="@+id/player_7_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_7_image"
+                        android:layout_alignLeft="@id/player_7_image"
+                        android:layout_alignRight="@id/player_7_image"
+                        android:layout_alignTop="@id/player_7_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="7" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_6"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_6"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_6_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_med" />
+
+                    <TextView
+                        android:id="@+id/player_6_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_6_image"
+                        android:layout_alignLeft="@id/player_6_image"
+                        android:layout_alignRight="@id/player_6_image"
+                        android:layout_alignTop="@id/player_6_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="6" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_5"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_5"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_5_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_def" />
+
+                    <TextView
+                        android:id="@+id/player_5_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_5_image"
+                        android:layout_alignLeft="@id/player_5_image"
+                        android:layout_alignRight="@id/player_5_image"
+                        android:layout_alignTop="@id/player_5_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="5" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_4"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_4"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_4_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_def" />
+
+                    <TextView
+                        android:id="@+id/player_4_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_4_image"
+                        android:layout_alignLeft="@id/player_4_image"
+                        android:layout_alignRight="@id/player_4_image"
+                        android:layout_alignTop="@id/player_4_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="4" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_3"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_3"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_3_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_def" />
+
+                    <TextView
+                        android:id="@+id/player_3_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_3_image"
+                        android:layout_alignLeft="@id/player_3_image"
+                        android:layout_alignRight="@id/player_3_image"
+                        android:layout_alignTop="@id/player_3_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="3" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_2"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_2"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_2_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_def" />
+
+                    <TextView
+                        android:id="@+id/player_2_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_2_image"
+                        android:layout_alignLeft="@id/player_2_image"
+                        android:layout_alignRight="@id/player_2_image"
+                        android:layout_alignTop="@id/player_2_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="2" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_1"
+                android:layout_width="@dimen/player_ball_sm"
+                android:layout_height="@dimen/player_ball_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_1"
+                    android:layout_width="@dimen/player_ball_sm"
+                    android:layout_height="@dimen/player_ball_sm">
+
+                    <ImageView
+                        android:id="@+id/player_1_image"
+                        android:layout_width="@dimen/player_ball_sm"
+                        android:layout_height="@dimen/player_ball_sm"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_arq" />
+
+                    <TextView
+                        android:id="@+id/player_1_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_1_image"
+                        android:layout_alignLeft="@id/player_1_image"
+                        android:layout_alignRight="@id/player_1_image"
+                        android:layout_alignTop="@id/player_1_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="1" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dialog_match_formation_visit_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <TableLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/dialog_match_formation_visit_guideline"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:id="@+id/dialog_match_formation_visit"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/dialog_match_resume_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/overview"
+            android:textSize="@dimen/text_size_xl"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_match_field_pack"
+            app:layout_constraintBottom_toTopOf="@+id/dialog_match_highlights"
+            android:layout_marginBottom="@dimen/margin_xxs"/>
+    <TableLayout
+        android:stretchColumns="*"
+        android:layout_marginLeft="@dimen/margin_n"
+        android:layout_marginRight="@dimen/margin_n"
+        android:paddingLeft="@dimen/padding_n"
+        android:paddingRight="@dimen/padding_n"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_match_resume_title"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_match_stats_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_match_highlights"/>
+        <TextView
+            android:id="@+id/dialog_match_stats_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stats"
+            android:textSize="@dimen/text_size_xl"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_match_highlights"
+            app:layout_constraintBottom_toTopOf="@+id/dialog_match_stats"/>
+    <TableLayout
+
+        android:paddingLeft="@dimen/padding_n"
+        android:paddingRight="@dimen/padding_n"
+        android:stretchColumns="*"
+        android:layout_marginLeft="@dimen/margin_n"
+        android:layout_marginRight="@dimen/margin_n"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_match_stats_title"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_match_button_close"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_match_stats"/>
+        <Button
+            android:layout_marginTop="@dimen/margin_n"
+            android:text="@string/close"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_match_stats"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dialog_match_button_close"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/dialog_threebuttons_title"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="title"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_threebuttons_text"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:textAlignment="center"
+        android:id="@+id/dialog_threebuttons_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_threebuttons_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_threebuttons_layout"
+        />
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/dialog_threebuttons_layout"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/dialog_threebuttons_text"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <Button
+           android:layout_margin="3dp"
+           android:id="@+id/dialog_threebuttons_accept_button"
+           android:layout_width="wrap_content"
+           android:text="Pagar 1000 $"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toLeftOf="@+id/dialog_threebuttons_fulbo_button"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toTopOf="@+id/dialog_threebuttons_cancel_button"
+           android:background="@color/futbolinAzul"
+           android:textColor="@android:color/white"
+           android:layout_height="wrap_content" />
+       <Button
+           android:layout_margin="3dp"
+           android:id="@+id/dialog_threebuttons_fulbo_button"
+           android:layout_width="wrap_content"
+           app:layout_constraintLeft_toRightOf="@+id/dialog_threebuttons_accept_button"
+           app:layout_constraintRight_toRightOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toTopOf="@+id/dialog_threebuttons_cancel_button"
+           android:background="@color/futbolinAzul"
+           android:textColor="@android:color/white"
+           android:text="@string/dialog_3_buttons_pay_fulbos"
+           android:layout_height="wrap_content"  />
+       <Button
+
+           android:id="@+id/dialog_threebuttons_cancel_button"
+           android:layout_width="wrap_content"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintRight_toRightOf="parent"
+           app:layout_constraintLeft_toLeftOf="parent"
+           android:background="@android:color/white"
+           android:textColor="@android:color/black"
+           android:text="@string/cancel"
+           android:layout_height="wrap_content" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Spinner
+        android:id="@+id/fragment_players_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_market_buttons_layout"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/fragment_players_button_show_hide"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/fragment_players_button_show_hide"
+        app:layout_constraintLeft_toRightOf="@+id/fragment_players_spinner"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/fragment_market_spending_margin"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_market_buttons_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textAlignment="center"
+        android:textSize="11dp"
+        android:text="@string/see_all"
+        />
+
+    <TextView
+        android:id="@+id/fragment_market_spending_margin"
+        android:textSize="10dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@+id/fragment_players_button_show_hide"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_market_buttons_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/fragment_market_buttons_layout"
+        android:weightSum="3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_players_button_show_hide"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_players_guideline"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:text="@string/fragment_market_button_trans_finished"
+        android:textSize="11dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/fragment_market_transactions"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/fragment_market_following"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_players_button_show_hide"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_players_guideline"
+        android:background="@color/futbolinAzul"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="@string/following"
+        android:textSize="11dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/fragment_market_following"
+        app:layout_constraintLeft_toRightOf="@+id/fragment_market_transactions"
+        app:layout_constraintRight_toLeftOf ="@+id/fragment_market_offers"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_players_button_show_hide"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_players_guideline"
+        android:background="@color/futbolinAzul"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="@string/fragment_market_my_offers"
+        android:textSize="9dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/fragment_market_offers"
+        app:layout_constraintLeft_toRightOf="@+id/fragment_market_following"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_players_button_show_hide"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_players_guideline"
+        android:background="@color/futbolinAzul"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:id="@+id/fragment_players_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_players_guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_market_recycler"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_players_table"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="10dp"
+            android:paddingBottom="5dp"
+            android:stretchColumns="*"
+            >
+            <TableRow
+                android:id="@+id/fragment_players_table_header_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tag="header"
+                android:visibility="gone"
+                android:background="@drawable/tablelayout_border">
+
+                <TextView android:text="@string/fragment_market_player_name"
+                    android:tag="header_name"
+                    android:clickable="true"
+                    android:onClick="onClickFragmentMarket"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="12dp"
+                    android:padding="2dp"
+                    android:background="@drawable/tablelayout_border"
+                    android:layout_width="wrap_content"
+                    android:layout_column="0"/>
+
+                <TextView android:text="@string/fragment_market_player_position"
+                    android:textSize="12dp"
+                    android:clickable="true"
+                    android:onClick="onClickFragmentMarket"
+                    android:tag="header_position"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:padding="2dp"
+                    android:background="@drawable/tablelayout_border"
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_column="1"/>
+                <TextView android:text="@string/fragment_market_player_average"
+                    android:textSize="12dp"
+                    android:clickable="true"
+                    android:onClick="onClickFragmentMarket"
+                    android:tag="header_average"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:padding="2dp"
+                    android:background="@drawable/tablelayout_border"
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_column="2"/>
+                <TextView android:text="@string/best_offer"
+                    android:textSize="12dp"
+                    android:clickable="true"
+                    android:onClick="onClickFragmentMarket"
+                    android:tag="header_best_offer"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:padding="2dp"
+                    android:background="@drawable/tablelayout_border"
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_column="3"/>
+
+                <TextView android:text="@string/team"
+                android:textSize="12dp"
+                    android:clickable="true"
+                    android:onClick="onClickFragmentMarket"
+                android:tag="header_team_hide"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:background="@drawable/tablelayout_border"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_column="4"/>
+
+                <TextView android:text="@string/fragment_market_limit_date"
+                    android:textSize="12dp"
+                    android:clickable="true"
+                    android:onClick="onClickFragmentMarket"
+                    android:tag="header_closesat_hide"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:padding="2dp"
+                    android:background="@drawable/tablelayout_border"
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_column="5"/>
+
+                <TextView android:text="@string/fragment_market_value"
+                    android:textSize="12dp"
+                    android:clickable="true"
+                    android:onClick="onClickFragmentMarket"
+                    android:tag="header_value_hide"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:padding="2dp"
+                    android:background="@drawable/tablelayout_border"
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_column="6"/>
+
+
+            </TableRow>
+        </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

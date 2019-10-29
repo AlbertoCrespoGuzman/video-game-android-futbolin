@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_background">
+
+    <TextView
+        android:id="@+id/dialog_message_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_n"
+        android:text="title"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_message_text_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:layout_margin="@dimen/margin_n"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:id="@+id/dialog_message_text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_message_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_player_anchor_tag_player_button"
+        />
+<Button
+    android:id="@+id/dialog_player_anchor_tag_player_button"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/dialog_message_text_1"
+    app:layout_constraintBottom_toTopOf="@+id/dialog_message_text_2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/white"
+    android:text="jugador"
+    android:background="@android:color/white"
+    android:textColor="@color/futbolinAzul"
+    android:textSize="10dp"
+    />
+    <TextView
+        android:layout_margin="@dimen/margin_n"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:id="@+id/dialog_message_text_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_player_anchor_tag_player_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_message_button"
+        />
+    <Button
+        android:layout_margin="@dimen/margin_n"
+        android:id="@+id/dialog_message_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/white"
+        android:text="@string/close"
+        android:textColor="@color/futbolinAzul"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_message_text_2"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/item_adapter_trophies_trophy_layout"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/item_adapter_trophies_category_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <ImageView
+            android:id="@+id/item_adapter_trophies_trophy_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            app:srcCompat="@drawable/ic_trophy"
+            android:background="@android:color/transparent"
+
+           />
+
+        <TextView
+            android:id="@+id/item_adapter_trophies_position_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@id/item_adapter_trophies_trophy_image"
+            android:layout_alignTop="@id/item_adapter_trophies_trophy_image"
+            android:layout_alignRight="@id/item_adapter_trophies_trophy_image"
+            android:layout_alignBottom="@id/item_adapter_trophies_trophy_image"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="11"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/item_adapter_trophies_category_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:text="primero que flipas"
+        android:textSize="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_adapter_trophies_trophy_layout"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

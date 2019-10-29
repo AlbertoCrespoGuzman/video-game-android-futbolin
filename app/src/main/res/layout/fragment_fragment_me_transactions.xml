@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<ScrollView
+    android:id="@+id/fragment_me_transactions_scroll"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/fragment_me_transactions_guideline"
+    android:layout_width="match_parent"
+    android:paddingBottom="80dp"
+    android:paddingTop="100dp"
+    android:layout_marginTop="300dp"
+    android:layout_marginBottom="300dp"
+    android:layout_height="wrap_content">
+    <TableLayout
+        android:id="@+id/fragment_me_transactions_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_sm"
+        android:layout_marginBottom="20dp"
+        android:stretchColumns="*"
+        >
+        <TableRow
+            android:tag="header">
+        <TextView
+            android:text="@string/fragment_transactions_date"
+            android:tag="header"
+            android:textAlignment="center"
+            android:background="@android:color/black"
+            android:textColor="@android:color/white"
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <TextView
+            android:text="@string/fragment_transactions_description"
+            android:tag="header"
+            android:textAlignment="center"
+            android:background="@android:color/black"
+            android:textColor="@android:color/white"
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <TextView
+            android:text="@string/fragment_transactions_sum"
+            android:tag="header"
+            android:background="@android:color/black"
+            android:textColor="@android:color/white"
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <TextView
+            android:text="@string/fragment_transactions_balance"
+            android:tag="header"
+            android:textAlignment="center"
+            android:background="@android:color/black"
+            android:textColor="@android:color/white"
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        </TableRow>
+    </TableLayout>
+</ScrollView>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fragment_me_transactions_guideline"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/fragment_pages_layout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_me_transactions_guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="7"
+        android:gravity="center_horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_me_transactions_previous_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:layout_gravity="center_vertical" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_me_transactions_first_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:layout_gravity="center_vertical" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_me_transactions_second_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:layout_gravity="center_vertical" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_me_transactions_third_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:layout_gravity="center_vertical" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_me_transactions_fourth_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:layout_gravity="center_vertical" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_me_transactions_fifth_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:layout_gravity="center_vertical" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_me_transactions_next_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:layout_height="wrap_content"
+            android:text="#>"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

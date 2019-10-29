@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_locker_room"
+            android:icon="@drawable/ic_home"
+            android:title="@string/locker_room_title" />
+        <item
+            android:id="@+id/nav_team"
+            android:icon="@drawable/ic_shield"
+            android:title="@string/team" />
+        <item
+            android:id="@+id/nav_me_transactions"
+            android:icon="@drawable/ic_money"
+            android:title="@string/finances" />
+        <item
+            android:id="@+id/nav_players"
+            android:icon="@drawable/ic_users"
+            android:title="@string/players" />
+        <item
+            android:id="@+id/nav_market"
+            android:icon="@drawable/ic_retweet"
+            android:title="@string/market_title" />
+        <item
+            android:id="@+id/nav_strategy"
+            android:icon="@drawable/ic_cogs"
+            android:title="@string/strategy" />
+        <item
+            android:id="@+id/nav_friendlies"
+            android:icon="@drawable/ic_handshake"
+            android:title="@string/friendlies" />
+        <item
+            android:id="@+id/nav_tournament"
+            android:icon="@drawable/ic_trophy"
+            android:title="@string/tournaments" />
+        <item
+            android:id="@+id/nav_shopping"
+            android:icon="@drawable/ic_shopping_cart"
+            android:title="@string/shopping" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_mobile_alt"
+                android:title="@string/settings" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_sign_out_alt"
+                android:title="@string/logout" />
+
+        </menu>
+    </item>
+
+</menu>

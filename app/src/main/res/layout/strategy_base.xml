@@ -1,0 +1,1633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+    <ScrollView
+        android:id="@+id/fragment_locker_room_scrollview"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_locker_room_total_constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/borders_blue"
+
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintRight_toRightOf="@+id/guideline1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.07" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#0866c6"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_margin="3dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/strategy_spinner"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textColor="@android:color/white"
+                android:id="@+id/strategy_text_formation"
+                android:gravity="start"
+                android:layout_gravity="start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strategy_formation" />
+
+            <Spinner
+                android:layout_margin="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/strategy_text_formation"
+                android:textColor="@android:color/white"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:id="@+id/strategy_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/field"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/zone_11"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.846"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.026">
+
+                <RelativeLayout
+                    android:id="@+id/player_11"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <ImageView
+                        android:id="@+id/player_11_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_atac" />
+
+                    <TextView
+                        android:id="@+id/player_11_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_11_image"
+                        android:layout_alignLeft="@id/player_11_image"
+                        android:layout_alignRight="@id/player_11_image"
+                        android:layout_alignTop="@id/player_11_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="11" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_10"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.111">
+
+                <RelativeLayout
+                    android:id="@+id/player_10"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <ImageView
+                        android:id="@+id/player_10_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_atac" />
+
+                    <TextView
+                        android:id="@+id/player_10_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_10_image"
+                        android:layout_alignLeft="@id/player_10_image"
+                        android:layout_alignRight="@id/player_10_image"
+                        android:layout_alignTop="@id/player_10_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="10" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_9"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_9"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <ImageView
+                        android:id="@+id/player_9_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_atac" />
+
+                    <TextView
+                        android:id="@+id/player_9_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_9_image"
+                        android:layout_alignLeft="@id/player_9_image"
+                        android:layout_alignRight="@id/player_9_image"
+                        android:layout_alignTop="@id/player_9_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="9" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_8"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_8"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <ImageView
+                        android:id="@+id/player_8_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_med" />
+
+                    <TextView
+                        android:id="@+id/player_8_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_8_image"
+                        android:layout_alignLeft="@id/player_8_image"
+                        android:layout_alignRight="@id/player_8_image"
+                        android:layout_alignTop="@id/player_8_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="8" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_7"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <ImageView
+                        android:id="@+id/player_7_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_med" />
+
+                    <TextView
+                        android:id="@+id/player_7_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_7_image"
+                        android:layout_alignLeft="@id/player_7_image"
+                        android:layout_alignRight="@id/player_7_image"
+                        android:layout_alignTop="@id/player_7_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="7" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_6"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_6"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <ImageView
+                        android:id="@+id/player_6_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_med" />
+
+                    <TextView
+                        android:id="@+id/player_6_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_6_image"
+                        android:layout_alignLeft="@id/player_6_image"
+                        android:layout_alignRight="@id/player_6_image"
+                        android:layout_alignTop="@id/player_6_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="6" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_5"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <ImageView
+                        android:id="@+id/player_5_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_def" />
+
+                    <TextView
+                        android:id="@+id/player_5_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_5_image"
+                        android:layout_alignLeft="@id/player_5_image"
+                        android:layout_alignRight="@id/player_5_image"
+                        android:layout_alignTop="@id/player_5_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="5" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_4"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <ImageView
+                        android:id="@+id/player_4_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_def" />
+
+                    <TextView
+                        android:id="@+id/player_4_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_4_image"
+                        android:layout_alignLeft="@id/player_4_image"
+                        android:layout_alignRight="@id/player_4_image"
+                        android:layout_alignTop="@id/player_4_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="4" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <ImageView
+                        android:id="@+id/player_3_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_def" />
+
+                    <TextView
+                        android:id="@+id/player_3_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_3_image"
+                        android:layout_alignLeft="@id/player_3_image"
+                        android:layout_alignRight="@id/player_3_image"
+                        android:layout_alignTop="@id/player_3_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="3" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <ImageView
+                        android:id="@+id/player_2_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_def" />
+
+                    <TextView
+                        android:id="@+id/player_2_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_2_image"
+                        android:layout_alignLeft="@id/player_2_image"
+                        android:layout_alignRight="@id/player_2_image"
+                        android:layout_alignTop="@id/player_2_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="2" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/zone_1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/player_1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <ImageView
+                        android:id="@+id/player_1_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/player_circle_arq" />
+
+                    <TextView
+                        android:id="@+id/player_1_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/player_1_image"
+                        android:layout_alignLeft="@id/player_1_image"
+                        android:layout_alignRight="@id/player_1_image"
+                        android:layout_alignTop="@id/player_1_image"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="1" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:visibility="invisible"
+        android:background="@drawable/borders_blue"
+        android:id="@+id/statistics"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:gravity="top"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="50dp"
+        android:foregroundGravity="top"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2">
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:background="#0866c6"
+            android:layout_width="match_parent"
+            android:layout_margin="2dp"
+            android:padding="2dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_margin="2dp"
+                android:textAlignment="center"
+                android:text="name"
+                android:textSize="10dp"
+                android:textColor="#ffffff"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/statistics_fragment_player_up_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/statistics_player_name"/>
+            <ImageView
+                android:layout_margin="2dp"
+                app:layout_constraintTop_toBottomOf="@+id/statistics_player_name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/statistics_fragment_player_down_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:id="@+id/statistics_fragment_player_up_image"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:srcCompat="@drawable/ic_arrow_circle_up"/>
+            <ImageView
+                android:layout_margin="2dp"
+                app:layout_constraintTop_toBottomOf="@+id/statistics_player_name"
+                app:layout_constraintLeft_toRightOf="@+id/statistics_fragment_player_up_image"
+                app:layout_constraintRight_toLeftOf="@+id/statistics_fragment_player_medkit_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:id="@+id/statistics_fragment_player_down_image"
+                app:srcCompat="@drawable/ic_arrow_down"/>
+            <ImageView
+                android:layout_margin="2dp"
+                android:gravity="left"
+                app:layout_constraintTop_toBottomOf="@+id/statistics_player_name"
+                app:layout_constraintLeft_toRightOf="@+id/statistics_fragment_player_down_image"
+                app:layout_constraintRight_toLeftOf="@+id/statistics_fragment_player_medkit_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:id="@+id/statistics_fragment_player_medkit_image"
+                app:srcCompat="@drawable/ic_medkit"/>
+            <TextView
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                app:layout_constraintTop_toBottomOf="@+id/statistics_player_name"
+                app:layout_constraintLeft_toRightOf="@+id/statistics_fragment_player_medkit_image"
+                app:layout_constraintRight_toLeftOf="@+id/statistics_fragment_player_yellowcard_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:id="@+id/statistics_fragment_player_medkit_text"
+                android:textColor="#ff0000"/>
+            <ImageView
+                android:layout_margin="2dp"
+                android:gravity="left"
+                app:layout_constraintTop_toBottomOf="@+id/statistics_player_name"
+                app:layout_constraintLeft_toRightOf="@+id/statistics_fragment_player_medkit_text"
+                app:layout_constraintRight_toLeftOf="@+id/statistics_fragment_player_redcard_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:id="@+id/statistics_fragment_player_yellowcard_image"
+                app:srcCompat="@drawable/ic_square"/>
+            <ImageView
+                android:layout_margin="2dp"
+                android:gravity="left"
+                app:layout_constraintTop_toBottomOf="@+id/statistics_player_name"
+                app:layout_constraintLeft_toRightOf="@+id/statistics_fragment_player_yellowcard_image"
+                app:layout_constraintRight_toLeftOf="@+id/statistics_fragment_player_retired_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:id="@+id/statistics_fragment_player_redcard_image"
+                app:srcCompat="@drawable/ic_square"/>
+            <ImageView
+                android:layout_margin="2dp"
+                android:gravity="left"
+                app:layout_constraintTop_toBottomOf="@+id/statistics_player_name"
+                app:layout_constraintLeft_toRightOf="@+id/statistics_fragment_player_redcard_image"
+                app:layout_constraintRight_toLeftOf="@+id/statistics_fragment_player_healted_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:id="@+id/statistics_fragment_player_retired_image"
+                app:srcCompat="@drawable/ic_user_times"/>
+            <ImageView
+                android:layout_margin="2dp"
+                android:gravity="left"
+                app:layout_constraintTop_toBottomOf="@+id/statistics_player_name"
+                app:layout_constraintLeft_toRightOf="@+id/statistics_fragment_player_retired_image"
+                app:layout_constraintRight_toLeftOf="@+id/statistics_fragment_player_transferable_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:id="@+id/statistics_fragment_player_healted_image"
+                app:srcCompat="@drawable/ic_plus_circle"/>
+            <ImageView
+                android:layout_margin="2dp"
+                android:gravity="left"
+                app:layout_constraintTop_toBottomOf="@+id/statistics_player_name"
+                app:layout_constraintLeft_toRightOf="@+id/statistics_fragment_player_healted_image"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:id="@+id/statistics_fragment_player_transferable_image"
+                app:srcCompat="@drawable/ic_share_square_solid"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TableLayout
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/age_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/strategy_age"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/age_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/average_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/strategy_average"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/average_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/gk_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/strategy_goalkeeping"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/gk_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/defense_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/strategy_defender"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/defense_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90"
+                    android:textSize="10dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/dribble_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/strategy_dribbling"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/dribble_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/head_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/strategy_heading"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/head_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90"
+                    android:textSize="10dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/jump_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/strategy_jumping"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/jump_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/pass_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/strategy_passing"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/pass_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90"
+                    android:textSize="10dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/pressure_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/strategy_precision"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/pressure_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/speed_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/strategy_speed"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/speed_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90"
+                    android:textSize="10dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/strength_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/strategy_strength"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/strength_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/quim_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/strategy_tackling"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/quim_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90"
+                    android:textSize="10dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/experience_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/strategy_experience"
+                    android:textSize="10dp"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/experience_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textSize="10dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/energy_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/strategy_stamina"
+                    android:textSize="10dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/energy_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90"
+                    android:textSize="10dp"
+                    android:visibility="gone" />
+            </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:text="@string/strategy_stamina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"/>
+                <androidx.core.widget.ContentLoadingProgressBar
+                    android:id="@+id/energy_bar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:progress="50"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:text="@string/strategy_experience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"/>
+                <androidx.core.widget.ContentLoadingProgressBar
+                    android:id="@+id/exp_bar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="7dp"
+                    android:max="100"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:progressDrawable="@drawable/gradient_progress"
+                    android:progress="50"/>
+            </LinearLayout>
+        </TableLayout>
+        <com.github.mikephil.charting.charts.RadarChart
+            android:id="@+id/strategy_chart"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_gravity="center_horizontal"
+            android:foregroundGravity="center_horizontal"/>
+    </LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/strategy_layout_suplentes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="w,3:1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2">
+
+        <TextView
+            android:id="@+id/strategy_suplentes_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/strategy_subtitutions"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginLeft="3dp"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintVertical_bias="0.14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:id="@+id/zone_12"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintVertical_bias="0.09"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <RelativeLayout
+                android:id="@+id/player_12"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_12_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_12_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="12"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/zone_13"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.37"
+            app:layout_constraintVertical_bias="0.09"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/player_13"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_13_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_13_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="13"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/zone_14"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintVertical_bias="0.09"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+            <RelativeLayout
+                android:id="@+id/player_14"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_14_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_14_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="14"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/zone_15"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.61"
+            app:layout_constraintVertical_bias="0.09"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+            <RelativeLayout
+                android:id="@+id/player_15"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_15_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_15_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="15"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/zone_16"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.73"
+            app:layout_constraintVertical_bias="0.09"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <RelativeLayout
+                android:id="@+id/player_16"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_16_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_16_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="16"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/zone_17"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintVertical_bias="0.09"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <RelativeLayout
+                android:id="@+id/player_17"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_17_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_17_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="17"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/zone_18"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintVertical_bias="0.09"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <RelativeLayout
+                android:id="@+id/player_18"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_18_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_18_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:text="18"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/strategy_noconvocados_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/strategy_not_called"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginLeft="3dp"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintVertical_bias="0.50"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:id="@+id/zone_19"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintVertical_bias="0.50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <RelativeLayout
+                android:id="@+id/player_19"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_19_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_19_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="19" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/zone_20"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.37"
+            app:layout_constraintVertical_bias="0.50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/player_20"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_20_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_20_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="20" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/zone_21"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintVertical_bias="0.50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/player_21"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_21_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_21_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="21" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/zone_22"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.61"
+            app:layout_constraintVertical_bias="0.50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/player_22"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_22_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_22_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="22" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/zone_23"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.73"
+            app:layout_constraintVertical_bias="0.50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/player_23"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_23_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_23_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="23" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/zone_24"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintVertical_bias="0.50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/player_24"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_24_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_24_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="24" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/zone_25"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintVertical_bias="0.50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/player_25"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_25_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_25_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="25" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/zone_26"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintVertical_bias="0.90"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/player_26"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_26_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_26_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="26" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/zone_27"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.37"
+            app:layout_constraintVertical_bias="0.90"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/player_27"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_27_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_27_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="27" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/zone_28"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintVertical_bias="0.90"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/player_28"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_28_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_28_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="28" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/zone_29"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.61"
+            app:layout_constraintVertical_bias="0.90"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/player_29"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_29_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_29_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="29" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/zone_30"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintHorizontal_bias="0.73"
+            app:layout_constraintVertical_bias="0.90"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/player_30"
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:id="@+id/player_30_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/player_circle_arq" />
+
+                <TextView
+                    android:id="@+id/player_30_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="30" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

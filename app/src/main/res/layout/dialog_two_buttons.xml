@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/dialog_twobuttons_title"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="title"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_twobuttons_text"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:textAlignment="center"
+        android:id="@+id/dialog_twobuttons_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_twobuttons_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_twobuttons_horizontal_guideline"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/dialog_twobuttons_horizontal_guideline"
+        app:layout_constraintGuide_percent="0.80"/>
+    <Button
+        android:id="@+id/dialog_twobuttons_cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/white"
+        android:text="@string/close"
+        android:textSize="10dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/dialog_twobuttons_confirm_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_twobuttons_horizontal_guideline"/>
+    <Button
+        android:id="@+id/dialog_twobuttons_confirm_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/futbolinAzul"
+        android:text="@string/accept"
+        android:textSize="10dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintLeft_toRightOf="@+id/dialog_twobuttons_cancel_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_twobuttons_horizontal_guideline"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

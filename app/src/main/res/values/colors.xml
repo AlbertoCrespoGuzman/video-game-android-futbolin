@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0077d6</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="futbolinAzul">#0077d6</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#CCCCCC</color>
+    <color name="gray_progress_bar">#c3c3c3c3</color>
+    <color name="trophy_first_color">#ffd800</color>
+    <color name="trophy_second_color">#c0c0c0</color>
+    <color name="trophy_third_color">#ce7f32</color>
+    <color name="azul_suave">#bde9fe</color>
+    <color name="yellow_card">#ffff07</color>
+    <color name="def_text_color">#3c6126</color>
+    <color name="med_text_color">#4B0082</color>
+    <color name="ata_text_color">#7c2a3a</color>
+</resources>

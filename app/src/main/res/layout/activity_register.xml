@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SplashActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/activity_register_layout"
+        android:layout_centerInParent="true"
+        android:scaleType="center">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#05080a"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/margin_n"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_xl">
+    <TextView
+        android:id="@+id/activity_register_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:text="@string/signup"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_xxl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/activity_register_language_text"
+        app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/activity_register_language_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/activity_register_title"
+            app:layout_constraintBottom_toTopOf="@+id/activity_register_input_language_spinner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="@string/language"
+            android:textColor="@color/white"
+            android:textAlignment="viewStart"
+            />
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/activity_register_input_language_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/activity_register_language_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/activity_register_input_first_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dialog"
+            android:entries="@array/languages_array"
+            android:background="@color/white"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:nextFocusForward="@+id/activity_register_input_last_name_layout"
+            android:layout_marginTop="@dimen/margin_top_xs"
+            android:background="@android:color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_register_input_language_spinner"
+            app:layout_constraintBottom_toTopOf="@+id/activity_register_input_last_name_layout"
+            android:id="@+id/activity_register_input_first_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:textColorHint="@android:color/black"
+            android:singleLine="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="@string/name"
+                android:textColorHint="@android:color/black"
+                android:textSize="@dimen/text_size_n"
+                android:textColor="@android:color/black"
+                android:id="@+id/activity_register_input_first_name"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:nextFocusForward="@+id/activity_register_input_email_layout"
+            android:layout_marginTop="@dimen/margin_top_xs"
+            android:background="@android:color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_register_input_first_name_layout"
+            app:layout_constraintBottom_toTopOf="@+id/activity_register_input_email_layout"
+            android:id="@+id/activity_register_input_last_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/surname"
+            android:singleLine="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="@string/surname"
+                android:textColorHint="@android:color/black"
+                android:textSize="@dimen/text_size_n"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:id="@+id/activity_register_input_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:background="@android:color/white"
+            android:nextFocusForward="@+id/activity_register_input_password_layout"
+            android:layout_marginTop="@dimen/margin_top_xs"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_register_input_last_name_layout"
+            app:layout_constraintBottom_toTopOf="@+id/activity_register_input_password_layout"
+            android:id="@+id/activity_register_input_email_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/email_v2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="@string/email_v2"
+                android:textColorHint="@android:color/black"
+                android:textSize="@dimen/text_size_n"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:id="@+id/activity_register_input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:background="@android:color/white"
+            android:nextFocusForward="@+id/activity_register_input_password_confirm_layout"
+            android:layout_marginTop="@dimen/margin_top_xs"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_register_input_email_layout"
+            app:layout_constraintBottom_toTopOf="@+id/activity_register_input_password_confirm_layout"
+            android:id="@+id/activity_register_input_password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="@string/password"
+                android:textColorHint="@android:color/black"
+                android:textSize="@dimen/text_size_n"
+                android:textColor="@android:color/black"
+                android:id="@+id/activity_register_input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:singleLine="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:background="@android:color/white"
+            android:id="@+id/activity_register_input_password_confirm_layout"
+            android:nextFocusForward="@+id/activity_register_input_submit_button"
+            android:layout_marginTop="@dimen/margin_top_xs"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_register_input_password_layout"
+            app:layout_constraintBottom_toTopOf="@+id/activity_register_input_submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/matching_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="@string/matching_password"
+                android:textColorHint="@android:color/black"
+                android:textSize="@dimen/text_size_n"
+                android:textColor="@android:color/black"
+                android:id="@+id/activity_register_input_password_confirm"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_marginTop="@dimen/margin_top_n"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/activity_register_input_submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup"
+        android:padding="@dimen/padding_xs"
+        android:background="#215476"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_register_input_password_confirm_layout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
